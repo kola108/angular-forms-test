@@ -1,0 +1,13 @@
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: lightgray;
+}
+
+.app {
+  height: 100vh;
+  background-color: rgb(248, 249, 250);
+}

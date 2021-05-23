@@ -1,0 +1,8 @@
+<h2>Reactive form</h2>
+<form class="form-group" (ngSubmit)="submitForm()">
+  <label for="firstName">First Name</label>
+  <input [ngClass]="{'is-invalid': false}" class="form-control" type="text" id="firstName" name="firstName">
+  <small class="text-danger">The Name is require</small>
+
+  <button type="submit" class="btn btn-outline-primary">Submit</button>
+</form>

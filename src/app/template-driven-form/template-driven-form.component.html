@@ -1,0 +1,35 @@
+<h2>Template driven form</h2>
+<form #testForm="ngForm" class="form-group" (ngSubmit)="submitForm(testForm)">
+  <label for="firstName">First Name</label>
+  <input [ngClass]="{'is-invalid': firstName.invalid && firstName.dirty}" class="form-control" type="text" id="firstName" name="firstName" ngModel #firstName="ngModel" required>
+  <small class="text-danger" *ngIf="firstName.invalid && firstName.dirty">The Name is require</small>
+
+  <label for="lastname">Last Name</label>
+  <input class="form-control" id="lastname" type="text" name="lastname" ngModel #lastname="ngModel" required>
+
+  <label for="phone">Phone</label>
+  <input class="form-control" id="phone" type="text" name="phone" ngModel>
+
+  <label for="email">Email</label>
+  <input class="form-control" id="email" type="email" name="email" ngModel #email="ngModel">
+
+  <div ngModelGroup #testGroup="ngModelGroup">
+    <h3>Adresse</h3>
+    <label for="city">City</label>
+    <input class="form-control" id="city" type="text" name="city" ngModel>
+
+    <label for="country">Country</label>
+    <input class="form-control" id="country" type="text" name="country" ngModel>
+
+    <label for="street">Street</label>
+    <input  class="form-control" id="street" type="text" name="street" ngModel>
+    {{testGroup.value | json}}
+  </div>
+
+  <label for="description">Description</label>
+  <input class="form-control" id="description" type="text" name="description" [(ngModel)]="userDescription">
+
+
+  {{testForm.form.value | json}}
+  <button type="submit" [disabled]="testForm.form.invalid" class="btn btn-outline-primary">Submit</button>
+</form>
